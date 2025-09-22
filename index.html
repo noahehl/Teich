@@ -3,42 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ortsfrage mit Gruppen</title>
+    <title>Frage 7</title>
     <script>
         function checkAnswer() {
             var answer = document.getElementById("answer").value.toLowerCase();
             var group = document.getElementById("group").value;
 
-            if (answer === "blauwal") {
-                var routes = {
-                    "Steinwedel": "https://www.google.com/maps/dir/52.386409,10.101401/52.387927,10.093568", <!--Waldpark13-->
-                    "Immensen": "https://www.google.com/maps/dir/52.386409,10.101401/52.383125,10.103022", <!--Aselmann10-->
-                    "Kolshorn": "https://www.google.com/maps/dir/52.386409,10.101401/52.383125,10.103022", <!--Aselmann10-->
-                };
-
-                if (routes[group]) {
-                    window.location.href = routes[group];
-                } else {
-                    alert("Bitte wähle eine gültige Gruppe aus.");
-                }
-            } else {
-                alert("Falsche Antwort! Bitte versuche es erneut.");
-            }
+            var message = "Gruppe: " + group + " | Antwort Frage 7: " + answer;
+            var whatsappLink = "https://wa.me/4915771817461?text=" + encodeURIComponent(message);
+            window.location.href = whatsappLink;
         }
     </script>
 </head>
 <body>
-    <h1>Am alten Friedhof</h1>
+    <h1>Frage 7</h1>
     <p>Bitte wähle deine Gruppe:</p>
     <select id="group">
         <option value="">-- Gruppe auswählen --</option>
-        <option value="Steinwedel">Steinwedel</option>
-        <option value="Immensen">Immensen</option>
+        <option value="Arpke und Sievershausen">Arpke und Sievershausen</option>
+        <option value="Aligse">Aligse</option>
         <option value="Kolshorn">Kolshorn</option>
+        <option value="Ahlten">Ahlten</option>
+        <option value="Lehrte">Lehrte 1</option>
+        <option value="Immensen">Immensen</option>
+        <option value="Lehrte 2">Lehrte 2</option>
+        <option value="Hämelerwald">Hämelerwald</option>
     </select>
 
-    <p>Wie heißt das größte Meerestier der Welt?</p>
-    <input type="text" id="answer" placeholder="Ort eingeben...">
+    <p>Wer ist unser Ortsbrandmeister?</p>
+    <input type="text" id="answer" placeholder="Antwort eingeben...">
     <button onclick="checkAnswer()">Antwort überprüfen</button>
 </body>
 </html>
